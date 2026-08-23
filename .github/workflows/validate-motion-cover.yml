@@ -1,0 +1,55 @@
+name: Validate Motion Covers
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "catalog/**"
+      - "covers/**"
+      - "tools/**"
+      - ".github/workflows/validate-motion-cover.yml"
+  push:
+    branches: [main]
+    paths:
+      - "catalog/**"
+      - "covers/**"
+      - "tools/**"
+      - ".github/workflows/validate-motion-cover.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: motion-covers-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate catalog and media
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Ensure ffprobe is available
+        shell: bash
+        run: |
+          if ! command -v ffprobe >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          ffprobe -version | head -n 1
+
+      - name: Run validator regression tests
+        run: python -m unittest discover -s tools/tests -p "test_*.py" -v
+
+      - name: Validate public catalog
+        run: python tools/validate_motion_cover.py catalog/v1/manifest.json
