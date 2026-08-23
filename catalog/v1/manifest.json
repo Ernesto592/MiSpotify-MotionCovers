@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "catalogId": "mispotify-official",
+  "revision": 1,
+  "generatedAt": "2026-08-23T03:01:22Z",
+  "cdnBaseUrl": "https://cdn.jsdelivr.net/gh/Ernesto592/MiSpotify-MotionCovers@main/",
+  "assets": {
+    "uvst-motion-90d0fb31": {
+      "type": "mp4",
+      "path": "covers/bad-bunny/un-verano-sin-ti/un-verano-sin-ti-90d0fb31.mp4",
+      "sha256": "90d0fb312f181de28d54bafa100da0a048779f6d80ae2b79b12ca9956920488f",
+      "sizeBytes": 2105139,
+      "width": 720,
+      "height": 720,
+      "fps": 24,
+      "durationMs": 15000
+    }
+  },
+  "entries": [
+    {
+      "id": "album-bad-bunny-un-verano-sin-ti",
+      "scope": "album",
+      "identity": {
+        "artist": "Bad Bunny",
+        "album": "Un Verano Sin Ti",
+        "albumState": "known",
+        "albumBrowseId": null,
+        "mbid": null
+      },
+      "assetId": "uvst-motion-90d0fb31"
+    }
+  ]
+}
