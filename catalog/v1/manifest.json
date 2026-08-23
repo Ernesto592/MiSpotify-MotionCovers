@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "catalogId": "mispotify-official",
-  "revision": 1,
-  "generatedAt": "2026-08-23T03:01:22Z",
+  "revision": 2,
+  "generatedAt": "2026-08-23T05:36:00Z",
   "cdnBaseUrl": "https://cdn.jsdelivr.net/gh/Ernesto592/MiSpotify-MotionCovers@main/",
   "assets": {
     "uvst-motion-90d0fb31": {
@@ -18,6 +18,20 @@
   },
   "entries": [
     {
+      "id": "track-bad-bunny-un-coco",
+      "scope": "track",
+      "identity": {
+        "artist": "Bad Bunny",
+        "title": "Un Coco",
+        "album": null,
+        "albumState": "unknown",
+        "videoId": null,
+        "isrc": null,
+        "mbid": null
+      },
+      "assetId": "uvst-motion-90d0fb31"
+    },
+    {
       "id": "album-bad-bunny-un-verano-sin-ti",
       "scope": "album",
       "identity": {
@@ -31,3 +45,4 @@
     }
   ]
 }
+
